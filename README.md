@@ -26,9 +26,3 @@ flatpak override net.emulicious.Emulicious --share=network
 # Enable access to your development environment
 flatpak override net.emulicious.Emulicious --filesystem=<path_here>
 ```
-
-### Flatseal
-
-![Toggle share network](./screenshots/flatseal-network.png)
-
-![Add Other files](./screenshots/flatseal-filesystem.png)
