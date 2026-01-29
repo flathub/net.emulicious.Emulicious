@@ -33,8 +33,6 @@ modules:
         sha256: 53c9b3104b6938044d230b4f4e422e56cae687ceff1bb0bf9fc794fe62fb272e
         size: 2929925
       - type: file
-        path: emulicious
-      - type: file
         path: net.emulicious.Emulicious.desktop
       - type: file
         path: net.emulicious.Emulicious.svg
@@ -45,3 +43,11 @@ modules:
         commands:
           - unzip -qq emulicious.zip -d emulicious
           - rm emulicious/Emulicious.exe emulicious/Emulicious.icl emulicious.zip
+      - type: script
+        dest-filename: emulicious
+        commands:
+          - export PATH=/app/jre/bin:/usr/bin
+          - java
+            --enable-native-access=ALL-UNNAMED
+            -jar "/app/extra/emulicious/Emulicious.jar"
+            "$@"
